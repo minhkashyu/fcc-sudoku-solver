@@ -37,6 +37,16 @@ module.exports = function(app) {
 
         let puzzleArray = solver.getPuzzleArray(puzzleString);
 
+        // If value submitted to /api/check is already placed in puzzle
+        // on that coordinate, the returned value will be an object
+        // containing a valid property with true if value is not conflicting.
+        if (typeof puzzleArray[row] !== 'undefined'
+          && typeof puzzleArray[row][col] !== 'undefined'
+          && puzzleArray[row][col] === value
+        ) {
+          return res.json({valid: true});
+        }
+
         if (!solver.checkRowPlacement(puzzleArray, row, value)) {
           conflict.push('row');
         }
