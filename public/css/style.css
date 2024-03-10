@@ -1,19 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.text-multi-color {
+  background-image: linear-gradient(to left, violet, indigo, green, blue, orange, red);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 code {
-  background: #d0d0d5;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-container {
-  max-width: 95%;
-  align-self: flex-start;
-}
-
-textarea {
-  width: 100%;
+  background-color: whitesmoke;
 }
 
 #user-stories {
@@ -91,14 +89,4 @@ td {
 
 .A3, .B3, .C3, .D3, .E3, .F3, .G3, .H3, .I3, .A6, .B6, .C6, .D6, .E6, .F6, .G6, .H6, .I6 {
   border-right: 3px solid;
-}
-
-@media (min-width: 800px) {
-  .container {
-    flex-direction: row;
-  }
-
-  .form-container {
-    align-self: center;
-  }
 }
